@@ -1,0 +1,37 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <div class="container">
+    <form class="navbar-form" role="search" method="GET" action="{% url 'search_view' %}">
+      <input type="text" name="q"/>
+      <input type="submit" class="vaidate" value="search"/>
+    </form>
+    {% if data %}
+    
+    
+    <table class="striped">
+      <tr>
+        <th>Name</th>
+        <th>Area</th>
+        <th>Location</th>
+        <th>County</th>
+        <th>Price</th>
+        <th>description</th>
+      </tr>
+      {% for d in data %}
+      <tr>
+        <td>{{d.name}}</td>
+        <td>{{d.area}}</td>
+        <td>{{d.location}}</td>
+        <td>{{d.county}}</td>
+        <td>{{d.price}}</td>
+        <td>{{d.description}}</td>
+      </tr>
+    {% endfor %}
+    </table>
+    
+    {% endif %}
+    </div>
+   
+ 
+
